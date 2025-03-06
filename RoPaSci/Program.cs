@@ -23,20 +23,22 @@ namespace RoPaSci
 
         private static int RockPaperScissors(string player1, string player2)
         {
+            int winnings;
             if (player1 == player2)
             {
-                return 0; // Draw
+                winnings = 0; // Draw
             }
             if (((player1 == "Rock") && (player2 == "Scissors")) ||
                 ((player1 == "Scissors") && (player2 == "Paper")) ||
                 ((player1 == "Paper") && (player2 == "Rock")))
             {
-                return 1; // Player 1 wins
+                winnings = 1; // Player 1 wins
             }
             else
             {
-                return 2; // Player 2 wins
+                winnings = 2; // Player 2 wins
             }
+            return winnings;
         }
     }
 }
