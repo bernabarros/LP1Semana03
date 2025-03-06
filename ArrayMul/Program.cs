@@ -16,12 +16,11 @@ namespace ArrayMul
 
             for(int i = 0 ; i < matrixes[0].Length; i += 2)
             {
-                for(int j = 0; j < matrixes[1].Length; j++)
+                for(int j = 0; j < matrixes[1].Length; j += 2)
                 {
                     result = matrixes[0][i] * matrixes[1][0] + matrixes[0][i+1]*
                     matrixes[1][1];
                     Console.WriteLine($"| {result,7:f2} |");
-                    j++;
                 }
             }
         }
