@@ -25,6 +25,12 @@ namespace WeaponSelector
         /// <returns>The weapons.</returns>
         private static Weapons ParseWeapons(string[] args)
         {
+            string chosen_weapons = "";
+            for(int i = 1; i < args.Length; i++)
+            {
+                chosen_weapons = args[i];
+            }
+            return Enum.Parse<Weapons>(chosen_weapons);
             // ////////// //
             // CHANGE ME! //
             // ////////// //
@@ -38,6 +44,7 @@ namespace WeaponSelector
         /// <returns>Wether the enemy was killed or not.</returns>
         private static bool WeaponsKillEnemy(EnemyType enemy, Weapons weapons)
         {
+            
             // ////////// //
             // CHANGE ME! //
             // ////////// //
