@@ -13,7 +13,7 @@ namespace RoPaSci
             int result = (int)RockPaperScissors(item1, item2);
             switch (result)
             {
-                case 5:
+                case 1:
                     Console.WriteLine("It's a draw!");
                     break;
                 case 2:
@@ -33,7 +33,7 @@ namespace RoPaSci
             {
                 winnings ^= GameStatus.Draw; // Draw
             }
-            if ((player1.HasFlag(GameItem.Rock) && player2.HasFlag
+            else if ((player1.HasFlag(GameItem.Rock) && player2.HasFlag
             (GameItem.Scissors)) || (player1.HasFlag(GameItem.Scissors) &&
             player2.HasFlag(GameItem.Paper)) || (player1.HasFlag(GameItem.Paper)
             && player2.HasFlag(GameItem.Rock)))    
