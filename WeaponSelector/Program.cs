@@ -44,7 +44,30 @@ namespace WeaponSelector
         /// <returns>Wether the enemy was killed or not.</returns>
         private static bool WeaponsKillEnemy(EnemyType enemy, Weapons weapons)
         {
-            
+            if (enemy == EnemyType.Zombie && weapons.HasFlag
+            (Weapons.SilverBullet))
+            {
+                return true;
+            }
+            else if (enemy == EnemyType.Vampire && weapons.HasFlag
+            (Weapons.Garlic) || weapons.HasFlag(Weapons.HolyWater))
+            {
+                return true;
+            }
+            else if (enemy == EnemyType.Werewolf && weapons.HasFlag
+            (Weapons.SilverBullet))
+            {
+                return true;
+            }
+            else if (enemy == EnemyType.Ghost && weapons.HasFlag
+            (Weapons.HolyWater))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
             // ////////// //
             // CHANGE ME! //
             // ////////// //
