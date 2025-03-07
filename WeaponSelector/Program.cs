@@ -25,12 +25,19 @@ namespace WeaponSelector
         /// <returns>The weapons.</returns>
         private static Weapons ParseWeapons(string[] args)
         {
+
             string chosen_weapons = "";
-            for(int i = 1; i < args.Length; i++)
+            string input_weapons = "";
+            foreach(string argumento in args)
             {
-                chosen_weapons = args[i];
+                chosen_weapons += argumento + " ";
             }
-            return Enum.Parse<Weapons>(chosen_weapons);
+            for (int i = 1; i < chosen_weapons.Length; i++)
+            {
+                input_weapons += chosen_weapons[i] + " ";
+            }
+            Console.WriteLine($"{input_weapons}");
+            return Enum.Parse<Weapons>(input_weapons);
             // ////////// //
             // CHANGE ME! //
             // ////////// //
@@ -47,26 +54,26 @@ namespace WeaponSelector
             if (enemy == EnemyType.Zombie && weapons.HasFlag
             (Weapons.SilverBullet))
             {
-                return true;
+                return false;
             }
             else if (enemy == EnemyType.Vampire && weapons.HasFlag
             (Weapons.Garlic) || weapons.HasFlag(Weapons.HolyWater))
             {
-                return true;
+                return false;
             }
             else if (enemy == EnemyType.Werewolf && weapons.HasFlag
             (Weapons.SilverBullet))
             {
-                return true;
+                return false;
             }
             else if (enemy == EnemyType.Ghost && weapons.HasFlag
             (Weapons.HolyWater))
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
             // ////////// //
             // CHANGE ME! //
@@ -79,6 +86,15 @@ namespace WeaponSelector
         /// <param name="enemy">The enemy we're trying to kill.</param>
         private static void DisplayResult(EnemyType enemy, bool survives)
         {
+            Console.WriteLine($"{enemy}");
+            if (survives == false)
+            {
+                Console.WriteLine($"{enemy} dies");
+            }
+            else
+            {
+                Console.WriteLine($"{enemy} survives");
+            }
             // ////////// //
             // CHANGE ME! //
             // ////////// //
