@@ -3,7 +3,7 @@ using System;
 namespace RoPaSci
 {
     [Flags]
-    enum GameStatus
+    public enum GameStatus
     {
         Draw = 1 << 0,
         Player1Wins = 1 << 1,

@@ -3,7 +3,7 @@ using System;
 namespace RoPaSci
 {
     [Flags]
-    enum GameItem
+    public enum GameItem
     {
         Rock = 1 << 0,
         Paper = 1 << 1,
